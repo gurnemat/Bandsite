@@ -1,0 +1,378 @@
+body {
+  font-family: "Avenir Next";
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+*::before {
+  box-sizing: inherit;
+}
+
+/* Mobile View - Header - starts*/
+.header {
+  height: 80px;
+  width: 100%;
+  background-color: #323232;
+}
+.header .header__logo-container {
+  display: flex;
+  justify-content: center;
+}
+.header .header__logo {
+  width: 6.25rem;
+  padding: 16px 0px;
+}
+.header .header__menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  color: #AFAFAF;
+  font-family: avenir demi;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.header .header__border-one:hover {
+  color: #FFFFFF;
+  border-bottom: 5px solid #FFFFFF;
+}
+.header .header__border-two:hover {
+  color: #FFFFFF;
+  border-bottom: 5px solid #FFFFFF;
+}
+.header .header__menu-item--two {
+  text-align: center;
+  padding-bottom: 3px;
+  font-size: 1rem;
+  width: 50vw;
+}
+
+/* Mobile View - Header - ends*/
+/* desktop View - Header - starts*/
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 80px;
+    width: 100%;
+    background-color: #323232;
+  }
+  .header__medium {
+    display: flex;
+    width: 50vw;
+    align-items: center;
+    height: 100%;
+  }
+  .header__logo {
+    width: 6.25rem;
+    padding: 0;
+    margin: 0 1.5rem;
+  }
+  .header__border-one, .header__border-two {
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    border-bottom: 4px solid transparent;
+    margin: 0 1.75rem;
+  }
+  .header__border-bottom:hover {
+    border-bottom: 4px solid #FFFFFF;
+  }
+  .header__menu {
+    margin-top: 5%;
+    display: flex;
+    -mas-flex-pack: distribute;
+    justify-content: space-evenly;
+    width: auto;
+    align-items: center;
+    font-size: 6.25rem;
+    width: 5rem;
+    font-size: 1rem;
+  }
+  /* .header__menu-item--one,  */
+  /* .header__menu-item--two {
+
+      font-size: 6.25rem;
+      width: 5rem;
+      font-size: 1rem;
+    } */
+}
+/* desktop View - Header - ends*/
+/* Mobile view - Hero - starts */
+.hero {
+  background-image: url(../assets/Images/hero-bio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero .hero__title {
+  color: white;
+  font-weight: 500;
+  font-size: 30px;
+  padding-left: 2rem;
+  z-index: 1;
+}
+.hero .hero__shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.3;
+}
+
+/* Mobile view - Hero - ends */
+/* Desktop view - Hero - starts */
+@media only screen and (min-width: 768px) {
+  .hero {
+    background-image: url(../assets/Images/hero-bio.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .hero .hero__title {
+    color: white;
+    font-weight: 500;
+    font-size: 64px;
+    padding-left: 2rem;
+    z-index: 1;
+  }
+  .hero .hero__shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.3;
+  }
+}
+/* Desktop view - Hero - ends */
+/* mobile view quote area - starts */
+.quote {
+  margin: 0 1rem;
+}
+
+.quote-title {
+  font-family: avenir-bold;
+  font-size: 1.5rem;
+  margin: 2rem 0 1.5rem 0;
+}
+
+.quote__container-image {
+  /* height: 45.3125vw; */
+  margin: 0 0 1.5rem 0;
+}
+
+.quote__image {
+  height: auto;
+  width: 100%;
+}
+
+.quote__sub-title {
+  font-family: avenir-demi;
+  font-size: 2rem;
+  line-height: 1.375rem;
+  margin: 0 0 2rem 0;
+}
+
+.main__musicians {
+  font-family: avenir-demi;
+  font-size: 0.875rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.main__description-container {
+  display: -ms-flexbox;
+}
+
+.main__description {
+  font-family: avenir-regular;
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* mobile view quote area - ends*/
+/* Media query for Quote - Desktop View - starts */
+@media only screen and (min-width: 768px) {
+  .quote {
+    margin: 0 1.5rem;
+  }
+  .quote-title {
+    font-family: avenir-bold;
+    font-size: 2.25rem;
+    margin: 2rem 0 1.5rem 0;
+  }
+  .quote__container-image {
+    /* height: 47.136vw; */
+    margin: 0 0 1.5rem 0;
+  }
+  .quote__image {
+    height: auto;
+    width: 100%;
+  }
+  .quote__sub-title {
+    font-family: avenir-demi;
+    font-size: 2rem;
+    line-height: 4rem;
+    margin: 0 0 2rem 0;
+    width: 91vw;
+  }
+  .main__musicians {
+    font-family: avenir-demi;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+  .main__description-container {
+    display: -ms-flexbox;
+  }
+  .main__description {
+    font-family: avenir-regular;
+    font-size: 0.8125rem;
+    line-height: 1.375rem;
+    margin: 2.5rem 2.5rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+}
+/* Media query for Quote - Desktop View - ends */
+/* Mobile view for gallery - starts*/
+.gallery-container {
+  margin: 2% 3% 7% 3%;
+}
+
+.h2 {
+  margin: 3% 0 4% 2%;
+  font-size: 1.5rem;
+}
+
+.gallery__grid img {
+  margin: 2;
+  padding: 5%;
+  width: 100%;
+}
+
+/* Mobile view for gallery - ends*/
+/* Desktop view - Gallery - starts*/
+@media only screen and (min-width: 768px) {
+  .gallery .gallery-container {
+    margin: 2% 3% 7% 3%;
+  }
+  .h2 {
+    margin: 3% 0 4% 2%;
+    font-size: 1.5rem;
+  }
+  .gallery__grid img {
+    margin: 2;
+    padding: 5%;
+    width: 20%;
+  }
+}
+/* Desktop view - Gallery - ends*/
+/* Mobile view - Footer - Starts*/
+.footer {
+  background-color: #323232;
+  color: white;
+}
+.footer div {
+  margin: 16px;
+}
+
+.footer__links {
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.footer__links h2 {
+  font-size: 2rem;
+}
+
+.agents-container {
+  display: -ms-flexbox;
+}
+
+.agent-contact {
+  display: flex;
+  flex-direction: Column;
+}
+
+.copyright-info p {
+  font-size: 0.7rem;
+}
+
+.footer__logo-one {
+  display: none;
+}
+
+footer__logo-two {
+  display: flex;
+}
+
+/* Mobile View - Footer - Ends */
+/* Desktop View - Footer - Starts */
+@media only screen and (min-width: 768px) {
+  .footer {
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    margin-left: 5%;
+  }
+  .footer div {
+    margin: 16px;
+  }
+  .footer__links {
+    margin-left: 1%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+  }
+  .footer__links h2 {
+    font-size: 2rem;
+  }
+  .agents-container {
+    display: -ms-flexbox;
+  }
+  .agent-contact {
+    display: flex;
+    flex-direction: row;
+  }
+  .copyright-info p {
+    font-size: 0.7rem;
+  }
+  .footer__logo-one {
+    display: flex;
+  }
+  .footer-logo-two {
+    display: none;
+  }
+}
+/* Desktop View - Footer - Ends *//*# sourceMappingURL=bio.css.map */
