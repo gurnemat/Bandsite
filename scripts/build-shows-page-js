@@ -1,0 +1,41 @@
+const arrDates = [
+  {
+    date: "Mon Sep 6 2021",
+    venue: "Ronald Lane",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Tue Sep 21 2021",
+    venue: "Pier 3 East",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Oct 15 2021",
+    venue: "View Lounge",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Sat Nov 06 2021",
+    venue: "Hyatt Agency",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Nov 26 2021",
+    venue: "Ronald Lane",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Wed Dec 15 2021",
+    venue: "Ronald Lane",
+    location: "San Francisco, CA",
+  },
+];
+
+function displayShows(arr) {
+  const shows = document.querySelector(".shows");
+
+  const showsTitle = document.createElement("h2");
+  showsTitle.classList.add("shows__title");
+  showsTitle.innerText = "Shows";
+  shows.appendChild(showsTitle);
+}
