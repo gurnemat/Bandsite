@@ -1,4 +1,4 @@
-const arrDates = [
+const shows = [
   {
     date: "Mon Sep 6 2021",
     venue: "Ronald Lane",
@@ -30,12 +30,101 @@ const arrDates = [
     location: "San Francisco, CA",
   },
 ];
+// show title
 
-function displayShows(arr) {
-  const shows = document.querySelector(".shows");
+const showContainer = document.querySelector(".shows");
+const ShowTitle = createElement("h2", "Shows", "shows__title");
 
-  const showsTitle = document.createElement("h2");
-  showsTitle.classList.add("shows__title");
-  showsTitle.innerText = "Shows";
-  shows.appendChild(showsTitle);
+const dateHeaderTd = createElement("p", "DATE", "shows__heading");
+const venueHeaderTd = createElement(
+  "p",
+  "VENUE",
+  "shows__heading",
+  "shows__heading--left"
+);
+const locationHeaderTd = createElement(
+  "p",
+  "LOCATION",
+  "shows__heading",
+  "shows__heading--right"
+);
+
+const headerBlock = createElement("div", "", "shows__block");
+
+headerBlock.prepend(locationHeaderTd);
+headerBlock.prepend(venueHeaderTd);
+headerBlock.prepend(dateHeaderTd);
+showContainer.prepend(ShowTitle);
+showContainer.prepend(headerBlock);
+
+//function
+
+const appendShowItem = function () {
+  shows.forEach(function (show) {
+    //main container
+    const showBlock = document.createElement("div");
+    showBlock.classList.add("shows__list");
+
+    // sub container
+
+    const firstItem = createElement("div", "", "shows__item");
+    const secondItem = createElement(
+      "div",
+      "",
+      "shows__item",
+      "shows__item--mod"
+    );
+    const thirdItem = createElement("div", "", "shows__item");
+
+    //element
+
+    const showDate = createElement(
+      "h4",
+      show.date,
+      "shows__detail",
+      "shows__detail-mod"
+    );
+
+    const showVenue = createElement("p", show.venue, "shows__detail");
+
+    const showLocation = createElement(
+      "p",
+      show.location,
+      "shows__detail",
+      "shows__detail--right"
+    );
+
+    const btn = createElement("button", "buy tickets", "shows__button");
+
+    //mobile heading
+
+    const dateHeader = createElement("p", "DATE", "shows__header");
+    const venueHeader = createElement("p", "VENUE", "shows__header");
+    const locationHeader = createElement("p", "LOCATION", "shows__header");
+
+    //Append element
+
+    firstItem.append(dateHeader);
+    firstItem.append(showDate);
+    secondItem.append(venueHeader);
+    secondItem.append(showVenue);
+    thirdItem.append(locationHeader);
+    thirdItem.append(showLocation);
+
+    showBlock.append(firstItem);
+    showBlock.append(secondItem);
+    showBlock.append(thirdItem);
+    showBlock.append(btn);
+
+    showContainer.append(showBlock);
+  });
+};
+
+appendShowItem();
+function createElement(element, text, className, modifier) {
+  const newElement = document.createElement(element);
+  newElement.innerText = text;
+  newElement.classList.add(className);
+  newElement.classList.add(modifier);
+  return newElement;
 }

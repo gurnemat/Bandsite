@@ -74,21 +74,6 @@ body {
   margin-right: 20px;
 }
 
-/* .hero__h4 {
-  color: white;
-  font-weight: 500;
-  font-size: 30px;
-  padding-left: 2rem;
-  z-index: 1;
-}
-
-.hero__h2 {
-  color: white;
-  font-weight: 500;
-  font-size: 30px;
-  padding-left: 2rem;
-  z-index: 1;
-} */
 
 .hero__title-song {
   position: relative;
@@ -140,81 +125,201 @@ body {
   }
 }
 
+/* Desktop view - hero - ends */
+
 /* Mobile view - table - starts */
 
-.event_index {
+.shows {
+  padding: 1.5em 0em 1em;
+}
+
+.shows__title {
+  padding: .3em .6em;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.shows__list {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 1em 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.show__item {
+  text-align: start;
+  margin: 0.6em 1.3em .85em;
+}
+
+.shows__detail {
+  font-size: 13px;
+}
+
+.shows__button {
+  text-transform: uppercase;
+  font-size: .875rem;
+  font-weight: 700;
+  margin: .6em 0em 1em 0em;
+  padding: 0 7.2em;
+  border: none;
+  border-radius: 4px;
+  background-color: #323232;
+  color: #FFFFFF;
+  transition: .2s linear;
+
+}
+
+.shows__button:hover {
+  background-color: black;
+}
+
+.shows__header {
+  margin-bottom: .3em;
+  font-size: .625rem;
+  font-weight: 700;
+  list-style: 20px;
+  color: #afafaf;
+}
+
+.shows__block {
   display: none;
 }
 
-.event {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 50px;
-  margin-bottom: 70px;
-  padding: 10px;
-  justify-content: center;
-  font-size: 30px;
+/* Mobile view - table - ends */
 
-}
+/* Desktop view - table - starts */
+@media screen and (min-width:768px) {
+  .show {
+    padding: 3dm 1em 0;
+    max-width: 768px;
+    margin: 0 auto;
 
-.buy-tickets {
-  padding: 5px 10px;
-  background-color: #323232;
-  color: #FFFFFF;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 20px 25px;
-  font-size: 30px;
-}
+  }
 
+  .shows__title {
+    font-size: 2.25rem;
+    padding: .6em;
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 1.2em;
+  }
 
-@media screen and (min-width: 768px) {
-
-
-  .event_index {
+  .shows__list {
     display: flex;
-    color: #e1e1e1;
-    flex-direction: row;
     align-items: center;
-    margin-bottom: 20px;
-    margin-left: 100px;
-    padding: 10px;
-    color: #e1e1e1;
-    justify-content: space-between;
-    width: 65%;
+    margin: 1.3em 0;
   }
 
-  .event {
+  .show__item {
+    width: 19%;
+    margin-left: 1.9em;
+  }
+
+  .shows__detail {
+    font-size: .875rem;
+    font-weight: 400;
+    padding-bottom: .7rem;
+  }
+
+  .shows__item--mod {
+    font-weight: 700;
+  }
+
+  .shows__detail--right {
+    margin-right: 1.5em;
+  }
+
+  .shows__button {
+    font-size: .9rem;
+    width: 9.375rem;
+    padding: 0 1.3rem;
+    margin: 0 1.3em 1.1em 2.1em;
+  }
+
+  .shows__button:hover {
+    background-color: black;
+  }
+
+  .shows__header {
+    display: none;
+  }
+
+  .shows__block {
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    margin-left: 100px;
-    margin-bottom: 20px;
-    padding: 10px;
     justify-content: space-between;
-
+    margin-left: 1.8em;
+    width: 64.5%;
+    font-size: 13px;
+    line-height: 1.125rem;
+    font-weight: 400;
+    color: #afafaf;
   }
 
-  .event h4 {
-    margin: 0;
-    font-weight: bold;
-  }
-
-  .event p {
-    margin: 5px 0;
-  }
-
-  .buy-tickets {
-    padding: 5px 10px;
-    background-color: #323232;
-    color: #FFFFFF;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 10px 15px;
-    width: max-content;
+  .shows__heading {
+    width: 25%;
+    font-size: .75rem;
+    font-weight: 700;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .show {
+    max-width: 100%;
+  }
+
+  .shows__title {
+    margin: 0 0 0.8em 3em;
+  }
+
+  .shows__list {
+    justify-content: space-between;
+    width: 63.5%;
+    margin-left: auto;
+    margin-right: 9em;
+  }
+
+  .shows__detail--mod {
+    font-weight: 700;
+  }
+
+  .shows__heading--left {
+    width: 15%;
+    margin: 0 0em 0 0.2em;
+
+  }
+
+  .shows__heading--right {
+    margin-right: 1.9em;
+  }
+
+  .shows__block {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1.8em;
+    width: 64.5%;
+    font-size: 20px;
+    line-height: 1.125rem;
+    font-weight: 400;
+    color: #afafaf;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile view - Footer - Starts*/
 .footer {
@@ -267,10 +372,10 @@ footer__logo-two {
   .footer {
     background-color: hsl(0, 0%, 20%);
     color: white;
-    margin-left: 5%;
+
 
     div {
-      margin: 16px;
+      margin: 4px;
     }
   }
 

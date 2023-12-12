@@ -13,8 +13,8 @@
         <div class="navigation__logo">
             <a href="index.html"><img class="header_logo" src="assets/Logo/Logo-bandsite.svg" alt="logo"></a>
         </div>
-        <div class="navigation__text">Biography</div>
-        <div class="navigation__text">Show</div>
+        <div class="navigation__text"><a href="/index.html">Biography</a></div>
+        <div class="navigation__text"><a href="/index.html"></a>Show</div>
     </header>
 
 
@@ -89,65 +89,29 @@
 
     <!-- form  -->
     <section class="comments">
-        <div class="comments__wrapper">
-            <h2>Join the Conversation</h2>
-            <div class="form">
-                <img class="avatar" src="/assets/Images/Mohan-muruge.jpg" alt="Avatar">
+        <div class="comments__section">
+            <img class="comments__avatar" src="/assets/Images/Mohan-muruge.jpg" alt="Avatar" />
+            <div class="comments__container">
 
-                <form class="form__fields">
+                <form class="comments__form" action="">
 
-                    <label class="form__label label-btn">NAME</label>
-                    <input class="form__input" id="formName" type="text" placeholder="Enter your name" />
+                    <label class="comments__label" for="userName">NAME</label>
 
-                    <label class="form__label label-btn">COMMENT</label>
-                    <textarea class="form__input form__input--textarea" name="comment-input" id="formComment" cols="30"
-                        rows="3" placeholder="Add a new comment" minlength="1" maxlength="200"></textarea>
-                    <Button class="btn label-btn" type="submit">comment</Button>
+                    <input class="comments__input" type="text" name="userName" id="userName"
+                        placeholder="Enter your name" />
+
+                    <label class="comments__label" for="userComment">COMMENT</label>
+                    <textarea class="comment-input" name="userComment" id="userComment" cols="30" rows="10"
+                        placeholder="Add a new comment"></textarea>
+                    <Button class="comments__button" type="submit">COMMENT</Button>
                 </form>
             </div>
-            <hr>
-            <div class="comments_display">
-                <ul class="comments__list">
-                    <li class="item">
-                        <img class="item__img" src="/assets/Images/Mohan-muruge.jpg" alt="mohan muruge" />
-                        <div class="item__section">
-                            <div class="item__title">
-                                <p class="item__name">Connor Walton</p>
-                                <p class="item__date">02/17/2021</class>
-                            </div>
-                            <div class="item__body">
-                                <p>This is art.this is inexplicable magic expressed in the purest way, everything that
-                                    makes up this majestic work deserves reverence. Let us appreciate this for what it
-                                    is and what it contains.</p>
-                            </div>
-                            <hr>
-                            <img class="item__img" src="/assets/Images/Mohan-muruge.jpg" alt="mohan muruge" />
-                            <div class="item__title">
-                                <p class="item__name">Emilie Beach</p>
-                                <p class="item__date">01/09/2021</class>
-                            </div>
-                            <div class="item__body">
-                                <p>I feel blessed to have seen them in person. Wha a show! They were just perfection. If
-                                    ther was one day of my life I could relive, this would be it. What an incredible
-                                    day.</p>
-                            </div>
-                            <hr>
-                            <img class="item__img" src="/assets/Images/Mohan-muruge.jpg" alt="mohan muruge" />
-                            <div class="item__title">
-                                <p class="item__name">Miles Acosta</p>
-                                <p class="item__date">12/20/2020</class>
-                            </div>
-                            <div class="item__body">
-                                <p>I can't stop listening. Every time I hear one of their songs - the vocals- its gives
-                                    me goosebumps. Shivers straigth down my spine. What a beautiful expression of
-                                    creativity. Can't get enough.</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        </div>
+        <div class="comments__block">
+            <div class="comments__list"></div>
         </div>
     </section>
+
 
     <!-- footer -->
 
