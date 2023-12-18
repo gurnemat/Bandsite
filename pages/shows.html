@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/shows.css">
     <title>Shows</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 
 <body>
     <header class="navigation">
         <div class="navigation__logo">
-            <a href="shows.html"><img class="header_logo" src="/assets/Logo/Logo-bandsite.svg" alt="logo"></a>
+            <a href="../index.html"><img class="header_logo" src="/assets/Logo/Logo-bandsite.svg" alt="logo"></a>
         </div>
         <div class="navigation__text"><a href="../index.html">Biography</a></div>
         <div class="navigation__text"><a href="./shows.html">Shows</a></div>
@@ -34,8 +35,7 @@
         </div>
     </section>
 
-    <section class="shows">
-    </section>
+    <section class="shows"></section>
 
 
     </section>
@@ -46,12 +46,12 @@
                 <h2>Get in Touch</h2>
             </div>
             <div>
-                <img src="./assets/Icons/SVG/Icon-instagram.svg" alt="">
-                <img src="./assets/Icons/SVG/Icon-facebook.svg" alt="">
-                <img src="./assets/Icons/SVG/Icon-twitter.svg" alt="">
+                <img src="/assets/Icons/SVG/Icon-instagram.svg" alt="insta">
+                <img src="/assets/Icons/SVG/Icon-facebook.svg" alt="FB">
+                <img src="/assets/Icons/SVG/Icon-twitter.svg" alt="twit">
             </div>
             <div class="footer__logo-one">
-                <img src="assets/Logo/Logo-bandsite.svg" alt="logo">
+                <img src="/assets/Logo/Logo-bandsite.svg" alt="logo">
 
             </div>
 
@@ -76,15 +76,14 @@
                 </div>
             </div>
             <div class="footer-logo-two">
-                <img src="assets/Logo/Logo-bandsite.svg" alt="logo">
+                <img src="/assets/Logo/Logo-bandsite.svg" alt="logo">
             </div>
             <div class="copyright-info">
                 <p>Copyright The Bees Knees @ 2021 All Rights Reserved</p>
             </div>
         </div>
     </section>
-    <script src="/scripts/build-shows-page-js"></script>
-
+    <script src="../scripts/build-shows-page-js" type="module"></script>
 </body>
 
 </html>

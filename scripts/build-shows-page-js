@@ -1,36 +1,14 @@
-const shows = [
-  {
-    date: "Mon Sep 6 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sep 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-];
-// show title
+import BandSiteApi from "./band-site-api.js";
+
+function createElement(element, text, className, modifier) {
+  const newElement = document.createElement(element);
+  newElement.innerText = text;
+  newElement.classList.add(className);
+  newElement.classList.add(modifier);
+  return newElement;
+}
+
+// Show title
 
 const showContainer = document.querySelector(".shows");
 const ShowTitle = createElement("h2", "Shows", "shows__title");
@@ -55,17 +33,34 @@ headerBlock.prepend(locationHeaderTd);
 headerBlock.prepend(venueHeaderTd);
 headerBlock.prepend(dateHeaderTd);
 showContainer.prepend(ShowTitle);
-showContainer.prepend(headerBlock);
+showContainer.append(headerBlock);
 
-//function
+// Function
 
-const appendShowItem = function () {
-  shows.forEach(function (show) {
-    //main container
+const bandSiteApi = new BandSiteApi("9384ce1d-6b70-47f1-b3a6-fe705c673dfe");
+
+async function getShowTime() {
+  try {
+    const response = await bandSiteApi.getShowDates();
+    console.log(response);
+    showTime(response);
+  } catch (error) {
+    console.error("Error getting show dates:", error);
+  }
+}
+
+// Appending data to DOM
+
+function showTime(response) {
+  response.sort((a, b) => {
+    return b.date - a.date;
+  });
+  response.forEach(function (show) {
+    //Main container
     const showBlock = document.createElement("div");
     showBlock.classList.add("shows__list");
 
-    // sub container
+    // Sub container
 
     const firstItem = createElement("div", "", "shows__item");
     const secondItem = createElement(
@@ -76,16 +71,19 @@ const appendShowItem = function () {
     );
     const thirdItem = createElement("div", "", "shows__item");
 
-    //element
+    //  Element
 
+    const timestamp = show.date;
+    const date = new Date(timestamp);
+    const newDate = date.toLocaleDateString();
     const showDate = createElement(
       "h4",
-      show.date,
+      newDate,
       "shows__detail",
-      "shows__detail-mod"
+      "shows__detail--mod"
     );
 
-    const showVenue = createElement("p", show.venue, "shows__detail");
+    const showVenue = createElement("p", show.place, "shows__detail");
 
     const showLocation = createElement(
       "p",
@@ -96,13 +94,13 @@ const appendShowItem = function () {
 
     const btn = createElement("button", "buy tickets", "shows__button");
 
-    //mobile heading
+    // Mobile heading
 
     const dateHeader = createElement("p", "DATE", "shows__header");
     const venueHeader = createElement("p", "VENUE", "shows__header");
     const locationHeader = createElement("p", "LOCATION", "shows__header");
 
-    //Append element
+    // Append element
 
     firstItem.append(dateHeader);
     firstItem.append(showDate);
@@ -118,13 +116,4 @@ const appendShowItem = function () {
 
     showContainer.append(showBlock);
   });
-};
-
-appendShowItem();
-function createElement(element, text, className, modifier) {
-  const newElement = document.createElement(element);
-  newElement.innerText = text;
-  newElement.classList.add(className);
-  newElement.classList.add(modifier);
-  return newElement;
 }
